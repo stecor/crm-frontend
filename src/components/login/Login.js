@@ -1,12 +1,12 @@
 import React from 'react'
 import { Button, Container, Row, Col, Form } from 'react-bootstrap'
 
-const Login = () => {
+const Login = ({ handleChange, email, password }) => {
   return (
     <Container>
       <Row>
         <Col>
-          <h1>Client Login</h1>
+          <h1 className='text-info text-center'>Client Login</h1>
           <hr />
           <Form>
             <br />
@@ -16,6 +16,8 @@ const Login = () => {
               <Form.Control
                 type='email'
                 name='email'
+                value={email}
+                onChange={handleChange}
                 placeholder='Enter Email'
                 required
               />
@@ -27,6 +29,8 @@ const Login = () => {
               <Form.Control
                 type='password'
                 name='password'
+                value={password}
+                onChange={handleChange}
                 placeholder='Enter Password'
                 required
               />
@@ -34,8 +38,13 @@ const Login = () => {
             <br />
             <Button type='submit'>Login</Button>
           </Form>
+          <hr />
         </Col>
       </Row>
+      <Col>
+        <a href='#!'>Forget Password?</a>
+      </Col>
+      <Row></Row>
     </Container>
   )
 }

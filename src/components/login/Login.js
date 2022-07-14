@@ -1,7 +1,8 @@
 import React from 'react'
 import { Button, Container, Row, Col, Form } from 'react-bootstrap'
+import PropTypes from 'prop-types'
 
-const Login = ({ handleChange, email, password }) => {
+const Login = ({ handleOnChange, email, password }) => {
   return (
     <Container>
       <Row>
@@ -17,7 +18,7 @@ const Login = ({ handleChange, email, password }) => {
                 type='email'
                 name='email'
                 value={email}
-                onChange={handleChange}
+                onChange={handleOnChange}
                 placeholder='Enter Email'
                 required
               />
@@ -30,7 +31,7 @@ const Login = ({ handleChange, email, password }) => {
                 type='password'
                 name='password'
                 value={password}
-                onChange={handleChange}
+                onChange={handleOnChange}
                 placeholder='Enter Password'
                 required
               />
@@ -41,12 +42,19 @@ const Login = ({ handleChange, email, password }) => {
           <hr />
         </Col>
       </Row>
-      <Col>
-        <a href='#!'>Forget Password?</a>
-      </Col>
-      <Row></Row>
+      <Row>
+        <Col>
+          <a href='#!'>Forget Password?</a>
+        </Col>
+      </Row>
     </Container>
   )
+}
+
+Login.propTypes = {
+  handleOnChange: PropTypes.func.isRequired,
+  email: PropTypes.string.isRequired,
+  password: PropTypes.string.isRequired,
 }
 
 export default Login

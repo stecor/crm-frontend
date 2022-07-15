@@ -24,11 +24,19 @@ const Entry = () => {
     }
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (!email || !password) {
+      alert('Fill up all the form!')
+    }
+  }
+
   return (
     <div className='entry-page bg-info'>
       <div className='form-box  mt-4 p-5 bg-light text-primary rounded '>
         <Login
           handleOnChange={handleChange}
+          handleOnSubmit={handleSubmit}
           email={email}
           password={password}
         />

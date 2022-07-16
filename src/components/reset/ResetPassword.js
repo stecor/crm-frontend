@@ -2,12 +2,12 @@ import React from 'react'
 import { Button, Container, Row, Col, Form } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 
-const Login = ({ handleOnChange, handleOnSubmit, email, password }) => {
+const ResetPassword = ({ handleOnChange, handleOnSubmit, email }) => {
   return (
     <Container>
       <Row>
         <Col>
-          <h1 className='text-info text-center'>Client Login</h1>
+          <h1 className='text-info text-center'>Reset Password</h1>
           <hr />
           <Form onSubmit={handleOnSubmit}>
             <br />
@@ -23,20 +23,7 @@ const Login = ({ handleOnChange, handleOnSubmit, email, password }) => {
                 required
               />
             </Form.Group>
-            {/* Password form */}
-            <br />
-            <Form.Group>
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                type='password'
-                name='password'
-                value={password}
-                onChange={handleOnChange}
-                placeholder='Enter Password'
-                required
-              />
-            </Form.Group>
-            <br />
+
             <Button type='submit'>Login</Button>
           </Form>
           <hr />
@@ -44,18 +31,17 @@ const Login = ({ handleOnChange, handleOnSubmit, email, password }) => {
       </Row>
       <Row>
         <Col>
-          <a href='#!'>Forget Password?</a>
+          <a href='#!'>Login</a>
         </Col>
       </Row>
     </Container>
   )
 }
 
-Login.propTypes = {
+ResetPassword.propTypes = {
   handleOnChange: PropTypes.func.isRequired,
   handleOnSubmit: PropTypes.func.isRequired,
   email: PropTypes.string.isRequired,
-  password: PropTypes.string.isRequired,
 }
 
-export default Login
+export default ResetPassword

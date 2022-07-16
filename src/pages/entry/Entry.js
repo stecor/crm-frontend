@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './entry.css'
 import Login from '../../components/login/Login'
+import ResetPassword from '../../components/reset/ResetPassword'
 
 const Entry = () => {
   const [email, setEmail] = useState('')
@@ -39,6 +40,11 @@ const Entry = () => {
           handleOnSubmit={handleSubmit}
           email={email}
           password={password}
+        />
+        <ResetPassword
+          handleOnChange={handleChange}
+          handleOnSubmit={handleSubmit}
+          email={email}
         />
       </div>
     </div>

@@ -2,7 +2,13 @@ import React from 'react'
 import { Button, Container, Row, Col, Form } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 
-const Login = ({ handleOnChange, handleOnSubmit, email, password }) => {
+const Login = ({
+  handleOnChange,
+  handleOnSubmit,
+  formOnSwitch,
+  email,
+  password,
+}) => {
   return (
     <Container>
       <Row>
@@ -44,7 +50,9 @@ const Login = ({ handleOnChange, handleOnSubmit, email, password }) => {
       </Row>
       <Row>
         <Col>
-          <a href='#!'>Forget Password?</a>
+          <a href='#!' onClick={() => formOnSwitch('reset')}>
+            Forget Password?
+          </a>
         </Col>
       </Row>
     </Container>
@@ -54,6 +62,7 @@ const Login = ({ handleOnChange, handleOnSubmit, email, password }) => {
 Login.propTypes = {
   handleOnChange: PropTypes.func.isRequired,
   handleOnSubmit: PropTypes.func.isRequired,
+  formOnSwitch: PropTypes.func.isRequired,
   email: PropTypes.string.isRequired,
   password: PropTypes.string.isRequired,
 }

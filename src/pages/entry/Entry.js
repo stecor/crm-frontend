@@ -6,6 +6,7 @@ import ResetPassword from '../../components/reset/ResetPassword'
 const Entry = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [formLoad, setFormLoad] = useState('login')
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -32,20 +33,30 @@ const Entry = () => {
     }
   }
 
+  const formSwitch = (formType) => {
+    setFormLoad(formType)
+  }
+
   return (
     <div className='entry-page bg-info'>
       <div className='form-box  mt-4 p-5 bg-light text-primary rounded '>
-        <Login
-          handleOnChange={handleChange}
-          handleOnSubmit={handleSubmit}
-          email={email}
-          password={password}
-        />
-        <ResetPassword
-          handleOnChange={handleChange}
-          handleOnSubmit={handleSubmit}
-          email={email}
-        />
+        {formLoad === 'login' && (
+          <Login
+            handleOnChange={handleChange}
+            handleOnSubmit={handleSubmit}
+            formOnSwitch={formSwitch}
+            email={email}
+            password={password}
+          />
+        )}
+        {formLoad === 'reset' && (
+          <ResetPassword
+            handleOnChange={handleChange}
+            handleOnSubmit={handleSubmit}
+            formOnSwitch={formSwitch}
+            email={email}
+          />
+        )}
       </div>
     </div>
   )

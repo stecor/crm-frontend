@@ -37,6 +37,16 @@ const Entry = () => {
     setFormLoad(formType)
   }
 
+  const handleResetSubmit = () => {
+    e.preventDefault()
+
+    if (!email) {
+      return alert('Please enter the email')
+    }
+
+    console.log(email)
+  }
+
   return (
     <div className='entry-page bg-info'>
       <div className='form-box  mt-4 p-5 bg-light text-primary rounded '>
@@ -52,7 +62,7 @@ const Entry = () => {
         {formLoad === 'reset' && (
           <ResetPassword
             handleOnChange={handleChange}
-            handleOnSubmit={handleSubmit}
+            handleOnResetSubmit={handleResetSubmit}
             formOnSwitch={formSwitch}
             email={email}
           />

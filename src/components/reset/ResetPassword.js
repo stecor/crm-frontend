@@ -14,7 +14,7 @@ const ResetPassword = ({
         <Col>
           <h1 className='text-info text-center'>Reset Password</h1>
           <hr />
-          <Form onSubmit={handleOnSubmit}>
+          <Form autoComplete='off' onSubmit={handleOnSubmit}>
             <br />
             {/* Email form */}
             <Form.Group>
@@ -29,7 +29,7 @@ const ResetPassword = ({
               />
             </Form.Group>
             <br />
-            <Button type='submit'>Login</Button>
+            <Button type='submit'>Reset Password</Button>
           </Form>
           <hr />
         </Col>

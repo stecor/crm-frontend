@@ -37,7 +37,7 @@ const Entry = () => {
     setFormLoad(formType)
   }
 
-  const handleResetSubmit = () => {
+  const handleResetSubmit = (e) => {
     e.preventDefault()
 
     if (!email) {

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 const ResetPassword = ({
   handleOnChange,
-  handleOnSubmit,
+  handleOnResetSubmit,
   formOnSwitch,
   email,
 }) => {
@@ -14,7 +14,7 @@ const ResetPassword = ({
         <Col>
           <h1 className='text-info text-center'>Reset Password</h1>
           <hr />
-          <Form autoComplete='off' onSubmit={handleOnSubmit}>
+          <Form autoComplete='off' onSubmit={handleOnResetSubmit}>
             <br />
             {/* Email form */}
             <Form.Group>
@@ -47,7 +47,7 @@ const ResetPassword = ({
 
 ResetPassword.propTypes = {
   handleOnChange: PropTypes.func.isRequired,
-  handleOnSubmit: PropTypes.func.isRequired,
+  handleOnResetSubmit: PropTypes.func.isRequired,
   formOnSwitch: PropTypes.func.isRequired,
   email: PropTypes.string.isRequired,
 }

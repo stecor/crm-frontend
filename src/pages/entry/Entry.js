@@ -10,8 +10,7 @@ const Entry = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target
-    console.log('hello')
-    console.log(name, value)
+
     switch (name) {
       case 'email':
         setEmail(value)
@@ -28,9 +27,12 @@ const Entry = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+
     if (!email || !password) {
       alert('Fill up all the form!')
     }
+    console.log(email)
+    console.log(password)
   }
 
   const formSwitch = (formType) => {
@@ -43,7 +45,6 @@ const Entry = () => {
     if (!email) {
       return alert('Please enter the email')
     }
-
     console.log(email)
   }
 

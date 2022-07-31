@@ -6,7 +6,7 @@ function App() {
   return (
     <div className='App'>
       {/* <Entry /> */}
-      <DefaultLayout />
+      <DefaultLayout>send page component</DefaultLayout>
     </div>
   )
 }
